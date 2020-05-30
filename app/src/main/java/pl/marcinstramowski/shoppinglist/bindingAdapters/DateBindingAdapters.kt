@@ -9,5 +9,5 @@ import java.util.*
 fun setImageUrl(textView: TextView, date: Date?) {
     textView.text = DateFormat.getDateTimeInstance(
         DateFormat.SHORT, DateFormat.SHORT, Locale.getDefault()
-    ).format(date)
+    ).format(date.toString())
 }

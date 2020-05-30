@@ -1,6 +1,6 @@
 package pl.marcinstramowski.shoppinglist.utils
 
-import android.support.v7.util.DiffUtil
+import androidx.recyclerview.widget.DiffUtil
 
 class GenericDiffCallback<T : UniqueId>(
         private val oldList: List<T>,

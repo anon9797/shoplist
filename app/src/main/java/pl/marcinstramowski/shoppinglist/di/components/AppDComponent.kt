@@ -14,7 +14,7 @@ import javax.inject.Singleton
     ApplicationModule::class, ActivityBindingModule::class, FragmentBindingModule::class,
     AndroidSupportInjectionModule::class, DatabaseModule::class, DatabaseSourcesBindingModule::class
 ])
-interface AppComponent : AndroidInjector<DaggerApplication> {
+interface AppDComponent : AndroidInjector<DaggerApplication> {
 
     override fun inject(instance: DaggerApplication)
 
@@ -24,6 +24,6 @@ interface AppComponent : AndroidInjector<DaggerApplication> {
         @BindsInstance
         fun application(application: Application): Builder
 
-        fun build(): AppComponent
+        fun build(): AppDComponent
     }
 }
