@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fd5e22</color>
+    <color name="colorPrimaryDark">#e04f1a</color>
+    <color name="colorAccent">#FFC400</color>
+
+    <color name="splashBackground">#fd5e22</color>
+
+    <color name="addItemCardBackground">#FAFAFA</color>
+    <color name="lightGrey">#AAAAAA</color>
+    <color name="defaultHintColor">#DDDDDD</color>
+    <color name="defaultTextColor">#808080</color>
+</resources>

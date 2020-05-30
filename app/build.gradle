@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "pl.marcinstramowski.shoppinglist"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding.enabled true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Unit tests
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.13.0'
+    testImplementation ("com.nhaarman:mockito-kotlin-kt1.1:1.5.0") {
+        exclude module: 'kotlin-stdlib'
+        exclude module: 'kotlin-reflect'
+    }
+
+    // Android tests
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // Dependency injection
+    kapt "com.google.dagger:dagger-compiler:2.14.1"
+    implementation "com.google.dagger:dagger:2.15"
+    implementation "com.google.dagger:dagger-android:2.15"
+    implementation "com.google.dagger:dagger-android-support:2.14.1"
+    kapt "com.google.dagger:dagger-android-processor:2.14.1"
+
+    // Useful extensions
+    implementation "org.jetbrains.anko:anko-common:0.10.8"
+    implementation 'org.jetbrains.anko:anko-design:0.10.8'
+    implementation "org.jetbrains.anko:anko-support-v4-commons:0.10.8"
+
+    // RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+    implementation 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+
+    // leak detection
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    // Logs
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // Database
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+    implementation "android.arch.persistence.room:rxjava2:1.1.1"
+
+    // RecyclerView adapter
+    implementation 'com.github.nitrico.lastadapter:lastadapter:2.3.0'
+    kapt 'com.android.databinding:compiler:3.1.4'
+}
