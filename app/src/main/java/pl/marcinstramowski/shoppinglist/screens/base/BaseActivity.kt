@@ -2,6 +2,7 @@ package pl.marcinstramowski.shoppinglist.screens.base
 
 import android.os.Bundle
 import androidx.annotation.CallSuper
+import androidx.appcompat.app.AppCompatActivity
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
